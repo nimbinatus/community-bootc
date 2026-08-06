@@ -1,0 +1,82 @@
+name: "Request: New Project Contributor"
+description: Request to become a Project Contributor in the bootc organization
+title: "REQUEST: New Project Contributor for @<username>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your interest in becoming a bootc Project Contributor!
+
+        Please review the [contributor requirements in GOVERNANCE.md](https://github.com/bootc-dev/community/blob/main/GOVERNANCE.md#becoming-a-project-contributor) before submitting this request.
+
+        **Process:** After you submit this issue, two or more Maintainers who have worked with you must sponsor your request by commenting on this issue. Once approved, you will be invited to the bootc GitHub organization with Triage permissions, enabling you to help manage issues and pull requests. Code contributions are always welcome via pull requests.
+
+  - type: input
+    id: github-username
+    attributes:
+      label: GitHub Username
+      description: Your GitHub username (without the @ symbol)
+      placeholder: "e.g. janedoe"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: requirements
+    attributes:
+      label: Requirements
+      description: Please confirm you meet the following requirements.
+      options:
+        - label: I have been actively participating in the bootc project for 2 months or more
+          required: true
+        - label: I have multiple non-trivial contributions (code commits, documentation improvements, issue triaging, or helping users in discussion forums)
+          required: true
+        - label: I have enabled [2FA on my GitHub account](https://github.com/settings/security)
+          required: true
+        - label: I have reviewed the [GOVERNANCE.md](https://github.com/bootc-dev/community/blob/main/GOVERNANCE.md) and understand how the project works
+          required: true
+        - label: I have reviewed and agree to abide by the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md)
+          required: true
+        - label: I have two Maintainer sponsors who have agreed to sponsor my request
+          required: true
+
+  - type: input
+    id: sponsor-1
+    attributes:
+      label: Sponsor 1
+      description: "A bootc Maintainer who has worked with you and agreed to sponsor this request. They must comment on this issue to confirm."
+      placeholder: "@maintainer-username"
+    validations:
+      required: true
+
+  - type: input
+    id: sponsor-2
+    attributes:
+      label: Sponsor 2
+      description: "A second bootc Maintainer who has worked with you and agreed to sponsor this request. They must comment on this issue to confirm."
+      placeholder: "@maintainer-username"
+    validations:
+      required: true
+
+  - type: textarea
+    id: contributions
+    attributes:
+      label: List of Contributions
+      description: |
+        Please list your contributions to the bootc project. Include links to PRs, issues, documentation, discussions, or other forms of participation.
+      placeholder: |
+        - PR authored: https://github.com/bootc-dev/bootc/pull/XXX
+        - Issue triaged: https://github.com/bootc-dev/bootc/issues/XXX
+        - Documentation: https://github.com/bootc-dev/bootc/pull/XXX
+        - Community meeting participation
+        - Helped users in discussions: https://github.com/bootc-dev/bootc/discussions/XXX
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Anything else you would like to share about your involvement with the bootc project (optional).
+      placeholder: "e.g. plans for future contributions, areas of interest, etc."
+    validations:
+      required: false
